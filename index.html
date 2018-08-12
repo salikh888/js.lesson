@@ -28,7 +28,7 @@
 
         var result = 1;
 
-        if (n <= 0 || isInteger(n) == false ) {
+        if (n < 0  || (x === 0 &&  n === 0) || (n % 1 !== 0)) {
             return NaN;
         }
 
