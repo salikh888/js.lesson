@@ -24,23 +24,18 @@
 <body>
 
 <script>
-    function pow(x, n) {
+    function counter(num) {
+        var num;
 
-        var result = 1;
+        var i = 1;
 
-        if (n < 0  || (x === 0 && n === 0) || (n % 1 !== 0)) {
-            return NaN;
-        }
-        if (n === 0 && x > 0) {
-            return result;
-        }
+        for (i; i <= num; i++) {
+            alert(i);
 
-        for (var i = 0; i < n; i++) {
-            result *= x;
         }
 
-        return result;
     }
+    counter(8);
 </script>
 
 <!-- в этом скрипте находятся спеки -->
