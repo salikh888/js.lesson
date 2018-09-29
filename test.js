@@ -1,6 +1,6 @@
-describe("pow", function () {
+describe("counter", function () {
 
-    describe("возводит x в степень n", function () {
+    describe("выводит цисло ", function () {
 
         function makeTest(x) {
             var expected = x * x * x;

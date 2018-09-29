@@ -1,53 +1,21 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- подключаем стили Mocha, для отображения результатов -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
-    <!-- подключаем библиотеку Mocha -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
-    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
-    <script>
-        mocha.setup('bdd');
-    </script>
-
-    <!-- подключаем chai -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
-    <!-- в chai есть много всего, выносим assert в глобальную область -->
-    <script>
-        var assert = chai.assert;
-    </script>
+    <title>Document</title>
 </head>
-
 <body>
 
-<script>
-    function counter(num) {
-        var num;
+<p>Введите число от 1 до 10:<input type="text" id="myNum"></p>
+<button onclick="magic()">Угадать</button>
+<hr>
 
-        var i = 1;
 
-        for (i; i <= num; i++) {
-            alert(i);
-
-        }
-
-    }
-    counter(8);
-</script>
-
-<!-- в этом скрипте находятся спеки -->
-<script src="test.js"></script>
-
-<!-- в элементе с id="mocha" будут результаты тестов -->
-<div id="mocha"></div>
-
-<!-- запустить тесты! -->
-<script>
-    mocha.run();
-</script>
+<p id="out"></p>
+<script src="jslib/script.js" defer></script>
 </body>
-
 </html>

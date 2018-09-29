@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jslib/script.js"></script>
+
+</head>
+
+<body>
+<form name="messageForm">
+    <label>Дни недели</label>
+    <select name="days">
+        <option>Понедельник</option>
+        <option>Вторник</option>
+        <option>Среда</option>
+        <option>Четверг</option>
+        <option>Пятница</option>
+        <option>Суббота</option>
+        <option>Четверг</option>
+    </select>
+    <br>
+    <br>
+    <textarea name="message" rows="5" cols="30"></textarea><br>
+    <input type="button" onclick="textSv();" value="Отправить">
+    <input type="button" onclick="textPr();" value="Распечатать">
+</form>
+<br>
+<br>
+<script src="jslib/script.js"></script>
+<div id="messegeOnScreen"></div>
+<script>
+
+
+    var days = "";
+    var text = "";
+    var i = 1;
+    var form = document.messageForm;
+    var arrayDays = [];
+
+
+    function textSv() {
+        days = form.days.value;
+        text = form.message.value;
+
+
+        arrayDays.push("<tr><td>" + i + "</td><td> Заметка на: " + days.bold() + "</td></tr>" +"<tr><td></td><td>"
+            + text + "<hr></td></tr>");
+        form.reset();
+
+    }
+
+    function textPr() {
+
+        document.getElementById('messegeOnScreen').innerHTML = "<table>" + arrayDays.join('') + "</table>";
+
+    }
+</script>
+
+</body>
+
+</html>
