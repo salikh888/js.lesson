@@ -21,3 +21,4 @@ function p2() {
     array.pop(l1);
     masOut();
 }
+
