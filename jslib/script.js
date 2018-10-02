@@ -1,19 +1,23 @@
-var numOut = Math.floor((Math.random() * 10) + 1);
-console.log(numOut);
+var array = [222, 323, 'adad'];
 
-function magic() {
-
-    var num = document.getElementById('myNum').value,
-        outMes = document.getElementById('out');
-
-
-    if (num < numOut) {
-        outMes.innerHTML = 'Вы ввели число меньше чем нужно';
-    } else if (num > numOut) {
-        outMes.innerHTML = 'Вы ввели число больше чем нужно';
-    } else {
-        outMes.innerHTML = 'Вы угадали';
+function masOut() {
+    var p = document.getElementById('out');
+    var str = '';
+    for (var i = 0; i < array.length; i++) {
+        str += i + ' --- ' + array[i] + '<br>';
     }
-
+    p.innerHTML = str;
 }
 
+masOut();
+
+function p1() {
+    var l1 = document.getElementById('l1').value;
+    array.push(l1);
+    masOut();
+}
+
+function p2() {
+    array.pop(l1);
+    masOut();
+}
