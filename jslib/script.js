@@ -1,24 +1,37 @@
-var array = [222, 323, 'adad'];
+var radio = document.getElementsByName('prim');
 
-function masOut() {
-    var p = document.getElementById('out');
-    var str = '';
-    for (var i = 0; i < array.length; i++) {
-        str += i + ' --- ' + array[i] + '<br>';
+for (var i = 0; i < radio.length; i++) {
+    radio[i].onchange = testRadio;
+}
+
+function testRadio() {
+    console.log (this.value);
+}
+
+document.getElementById('one').onclick = checkRadio;
+
+var n = document.getElementsByName('prim');
+
+function checkRadio() {
+    for (var i = 0; i < n.length; i++) {
+        if (n[i].checked) {
+            alert(n[i].value);
+            break;
+        }
     }
-    p.innerHTML = str;
+}
+//CSS Генератор
+
+document.getElementById('rl').oninput = cssGenerator;
+
+function cssGenerator() {
+    var div = document.getElementById('test');
+    var out = document.getElementById('out');
+    console.log(this.value);
+    div.style.borderRadius =this.value + 'px';
+    out.innerHTML = 'webkit-border-radius: ' + this.value + 'px;\n';
+    out.innerHTML += 'border-radius: ' + this.value + 'px;';
 }
 
-masOut();
 
-function p1() {
-    var l1 = document.getElementById('l1').value;
-    array.push(l1);
-    masOut();
-}
-
-function p2() {
-    array.pop(l1);
-    masOut();
-}
 

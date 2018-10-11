@@ -37,3 +37,19 @@ button {
     float: left;
 
 }
+
+/*CSS Генератор*/
+
+#test {
+    width: 150px;
+    height: 150px;
+    background: greenyellow;
+    margin: 30px;
+}
+
+#out {
+    width: 300px;
+    height: 150px;
+    margin: 20px;
+    font-size: 15px;
+}
