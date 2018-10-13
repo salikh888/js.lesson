@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script src="jslib/script.js" defer></script>-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<p><input type="radio" name="prim" value="яблоки"> Яблоки</p>
+<p><input type="radio" name="prim" value="сливы"> Сливы</p>
+<p><input type="radio" name="prim" value="груши"> Груши</p>
+<button id="one">Push</button>
+<hr>
+<h3>CSS Генератор</h3>
+<p>Border-radius: <input type="range" id="lu" value="0"></p>
+<p>Border-radius: <input type="range" id="ru" value="0"></p>
+<p>Border-radius: <input type="range" id="ld" value="0"></p>
+<p>Border-radius: <input type="range" id="rd" value="0"></p>
+<div id="test"></div>
+<textarea id="out"></textarea>
+<script>
+
+
+    var radio = document.getElementsByName('prim');
+
+    for (var i = 0; i < radio.length; i++) {
+        radio[i].onchange = testRadio;
+    }
+
+    function testRadio() {
+        console.log (this.value);
+    }
+
+    document.getElementById('one').onclick = checkRadio;
+
+    var n = document.getElementsByName('prim');
+
+    function checkRadio() {
+        for (var i = 0; i < n.length; i++) {
+            if (n[i].checked) {
+                alert(n[i].value);
+                break;
+            }
+        }
+    }
+    //CSS Генератор
+
+    document.getElementById('lu').oninput = cssGenerator;
+    document.getElementById('ru').oninput = cssGenerator;
+    document.getElementById('ld').oninput = cssGenerator;
+    document.getElementById('rd').oninput = cssGenerator;
+
+    function cssGenerator() {
+        var div = document.getElementById('test');
+        var out = document.getElementById('out');
+        console.log(this.value);
+        div.style.borderRadius = lu.value + 'px ' + ru.value + 'px ' + ld.value + 'px ' + rd.value + 'px';
+        out.innerHTML = 'webkit-border-radius: ' + lu.value + 'px ' + ru.value + 'px ' + ld.value + 'px ' + rd.value + 'px\n';
+        out.innerHTML += 'border-radius: ' + lu.value + 'px ' + ru.value + 'px ' + ld.value + 'px ' + rd.value + 'px\n';
+    }
+
+    //Задачи на ассициативные мыссивы
+    var date = new Date();
+    var year = date.getFullYear();
+
+    var man = {
+        "name" : "Ivan",
+        "age" : 56,
+        "sex" : "male",
+        "id" : "01123",
+        "year" : function () {
+            var date = new Date();
+            var year = date.getFullYear();
+            return year - this.age;
+        }
+    };
+    console.log(man.year());
+
+    var arrayNum = {
+        "mas" : [5, 5],
+        "sum" : function () {
+            var s = 0;
+            for(var i = 0; i < this.mas.length; i++) {
+                s += this.mas[i];
+
+            }
+            return s;
+        }
+    };
+    console.log(arrayNum.sum());
+
+
+
+
+</script>
+</body>
+</html>
