@@ -36,6 +36,13 @@ function cssGenerator() {
     out.innerHTML += 'border-radius: ' + lu.value + 'px ' + ru.value + 'px ' + ld.value + 'px ' + rd.value + 'px\n';
 }
 
-
+function cssGenerator2() {
+    var div = document.getElementById('test');
+    var out = document.getElementById('out');
+    console.log(this.value);
+    div.style.borderRadius = cssGenerator  + this.value + 'px';
+    out.innerHTML = 'webkit-border-radius: ' + this.value + 'px;\n';
+    out.innerHTML += 'border-radius: ' + this.value + 'px;';
+}
 
 
